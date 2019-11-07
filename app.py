@@ -40,7 +40,7 @@ parse_dictionary = module_parse_dictionary.ParseDictionary()
 
 # This is a test of pandas and loading data into the the container from SQL
 # database connection. We was testing this out for Lori
-parse_dictionary.run3()
+parse_dictionary.run4()
 
 logging.info('The end if near!')
 logging.info('LPA Migration Test')
