@@ -1,0 +1,30 @@
+#Virtual environments
+.venv
+venv/
+venv.bak/
+venv/*
+venv_3/
+
+#Compiled Python files
+*.pyc
+*.pyo
+
+#IDEA files
+.idea/
+
+#Output of builds (projectname-#.#.#)
+*-[0-9]*.[0-9]*.[0-9]*
+
+#Pip files
+Pipfile
+Pipfile.lock
+
+#Testing files
+.coverage
+.pytest_cache
+htmlcov/
+
+#Build files from setup.py
+build/
+dist/
+**/*.egg-info

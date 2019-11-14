@@ -13,6 +13,8 @@ import datetime
 import logging
 import json
 
+import clob_parser as module_clob_parser
+
 import traceback
 from pprint import pprint
 from typing import OrderedDict
@@ -248,9 +250,14 @@ class ParseDictionary:
                     # to following the light
                     self.get_dictionary_object(next_object)
 
-                elif isinstance(next_object, (collections.List)):
+                elif isinstance(next_object, list):
+                    # Object type: <class 'list'>
+                    # We will expect a list of collections.OrderedDict objects
+                    # or other lists or what ???
                     logging.debug("Determine the object type")
-                    logging.debug("Determine the object type")
+
+                    for item_object in next_object:
+                        self.get_dictionary_object(item_object)
 
                 else:
                     # Finally we are here in the data (key - value pairs)
@@ -268,6 +275,48 @@ class ParseDictionary:
 
 
 
+    # method: run5()
+    # brief: Test the iteration of the dataset
+    # param: row - The row we are going to validate
+    # param: age - the age of the house you want
+    def run5(self):
+        logging.debug('------------------------------------------------------------')
+        logging.debug('Inside: ParseDictionary::run()')
+        logging.debug("Loading the data file")
+
+        # Phone Data
+        phone01 = OrderedDict([('id', '1'), ('phoneNumber', '(605) 336-2880'), ('isInherited', 'Y')])
+        phones = OrderedDict([('phone', phone01)])
+
+        # Email Data
+        email01 = OrderedDict([('id', '1'), ('address', 'lawyers@dehs.com'), ('isInherited', 'Y')])
+        emails = OrderedDict([('email', email01)])
+
+        # Education data
+        education01 = OrderedDict([('type', 'LE'), ('schoolName', 'Nicholaus Copernicus'), ('graduationDate', '1952')])
+        education02 = OrderedDict([('type', 'LW'), ('schoolName', 'Happy LAw School'), ('graduationDate', '1991')])
+        education03 = OrderedDict([('type', 'LQ'), ('schoolName', 'Law School Number 1'), ('graduationDate', '1911')])
+        educations = OrderedDict([('education', [education01, education02, education03   ]   )])
+
+        allOracle88 = OrderedDict([('arbitrator', OrderedDict([('profileUuid', 'Iaac53e00bd9a11de9b8c850332338889'),
+                                                               ('phones', phones),
+                                                               ('emails', emails),
+                                                               ('educations', educations),
+                                                               ('statusType', 'A') ])  )])
+
+        print(json.dumps(allOracle88, indent=2))
+
+        # Note - we might want to use recussion to iterationt his stuff
+        # We are fun playing here
+
+        logging.debug("Start parsing ... ")
+
+        clob_parser = module_clob_parser.CLOBParser()
+        keyword = 'hello'
+
+        resultList = clob_parser.parse(allOracle88, keyword)
+
+        logging.debug("Done")
 
 
 
