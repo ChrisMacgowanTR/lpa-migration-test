@@ -13,6 +13,7 @@ import logging
 
 class DataObject:
 
+    parent = ''
     key = ''
     value = ''
 
@@ -20,10 +21,22 @@ class DataObject:
     # brief: This would be the famous constructor
     # param: name - the name of the house you want
     # param: age - the age of the house you want
-    def __init__(self, key, value):
+    def __init__(self, parent, key, value):
+        self.parent = parent
         self.key = key
         self.value = value
 
-    def set(self, key, value):
+    def set(self, parent, key, value):
+        self.parent = parent
         self.key = key
         self.value = value
+
+    def get_parent(self):
+        return self.parent
+
+    def get_key(self):
+        return self.key
+
+    def get_value(self):
+        return self.value
+

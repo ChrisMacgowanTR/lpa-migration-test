@@ -20,6 +20,7 @@ import traceback
 
 import parse_dictionary as module_parse_dictionary
 #import idmap_analysis_wca_guid as module_idmap_analysis_wca_guid
+from my_dictionary import my_dictionary
 
 file_handler = logging.FileHandler(filename='idmap_utility.log')
 stdout_handler = logging.StreamHandler(sys.stdout)
@@ -40,6 +41,15 @@ parse_dictionary = module_parse_dictionary.ParseDictionary()
 
 # This is a test of pandas and loading data into the the container from SQL
 # database connection. We was testing this out for Lori
+
+# We have added this to
+dict_obj = my_dictionary()
+
+dict_obj.add('key-1', 'Value-One')
+dict_obj.add('key-2', 'Value-Two')
+dict_obj.add('key-1', 'Value-A-One')
+dict_obj.add('key-2', 'Value-A-Two')
+print(dict_obj)
 
 parse_dictionary.run5()
 

@@ -312,9 +312,41 @@ class ParseDictionary:
         logging.debug("Start parsing ... ")
 
         clob_parser = module_clob_parser.CLOBParser()
-        keyword = 'hello'
 
-        resultList = clob_parser.parse(allOracle88, keyword)
+        # search_parent - is required. When found it will return all the children
+        # search_keyword - will return a specific child
+
+        # Test Case 1.0 - Pass
+        # search_parent = 'arbitrator'
+        # search_keyword = 'profileUuid'
+
+        # Test Case 1.1 - Pass
+        # search_parent = 'arbitrator'
+        # search_keyword = 'statusType'
+
+        # Test Case 2.0 - pass
+        search_parent = 'phone'
+        search_keyword = ''
+
+        # Test Case 2.1 - pass
+        search_parent = 'phone'
+        search_keyword = 'id'
+
+        # Test Case 3.0 - pass
+        search_parent = 'education'
+        search_keyword = ''
+
+        result_list = clob_parser.parse(allOracle88, search_parent, search_keyword)
+
+        # We will iterate through the collection
+
+        logging.debug("--------------------------------------------------------------------------------")
+        logging.debug("CLOB Parse Data")
+        logging.debug("Parent - Key:Value")
+
+        for result in result_list:
+            result_message = f"{result.get_parent()} - {result.get_key()}:{result.get_value()}"
+            logging.debug(result_message)
 
         logging.debug("Done")
 

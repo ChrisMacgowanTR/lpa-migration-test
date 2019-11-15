@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="747b0336-16ca-471a-931c-7f75d46883b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/clob_parser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_object.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_dictionary.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clob_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/clob_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_object.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_object.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/idmap_utility.log" beforeDir="false" afterPath="$PROJECT_DIR$/idmap_utility.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parse_dictionary.py" beforeDir="false" afterPath="$PROJECT_DIR$/parse_dictionary.py" afterDir="false" />
     </list>
@@ -102,8 +103,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/parse_dictionary.py</url>
-          <line>306</line>
-          <option name="timeStamp" value="4" />
+          <line>350</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/parse_dictionary.py</url>
+          <line>311</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
