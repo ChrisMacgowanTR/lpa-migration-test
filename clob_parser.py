@@ -29,7 +29,8 @@ class CLOBParser:
     # brief: Parse the given CLOB object for objects based on the search parent and
     # search keyword. A list of objects will be returned based on the search_parent
     # and search_keyword. If search_keyword is left empty a collection of objects will
-    # be returned.
+    # be returned based on the search_parent. If the search_keyword is set the list
+    # will return one object - based on the search_parent and search_keyword.
     #
     # param: clob - CLOB object to parse
     # param: search_parent - Parent of object to return
