@@ -6,8 +6,8 @@
 # clob_parser.py
 #
 # We will use this class to parse the clob data.
-# More news at 11pm
 #
+
 import collections
 import logging
 import json
@@ -34,12 +34,12 @@ class CLOBParser:
     #
     # param: clob - CLOB object to parse
     # param: search_parent - Parent of object to return
-    # param: search_keyword - object keyword to parse. Empty will all objects
+    # param: search_key - object key to parse. Empty will all objects
     # return: List of objects
     def parse(self,
               clob,
               search_parent,
-              search_keyword):
+              search_key):
 
         logging.debug('Inside: CLOBParser::parse()')
 
@@ -71,7 +71,7 @@ class CLOBParser:
                 # The object is a collection we will continuie
                 # to iterate
 
-                self.get_dictionary_object(value, active_key, parent_key, search_parent, search_keyword)
+                self.get_dictionary_object(value, active_key, parent_key, search_parent, search_key)
             else:
                 logging.debug("Object type: %s", type(value))
 
@@ -82,8 +82,13 @@ class CLOBParser:
     # brief: We will use this to get the dictionalty object given the
     # key. Based on the type of object we will return the value of the
     # object
-    # param: object - the data we are passing
-    def get_dictionary_object(self, object, active_key, parent_key, search_parent, search_keyword):
+    #
+    # param: clob - CLOB object to parse
+    # param: active_key - Seems to be unused at this time ;-)
+    # param: parent_key - Used to manage parent during recursion
+    # param: search_parent - Parent of object to return
+    # param: search_key - object key to parse. Empty will all objects
+    def get_dictionary_object(self, object, active_key, parent_key, search_parent, search_key):
         logging.debug('------------------------------------------------------------')
         logging.debug('Inside: ParseDictionary::get_dictionary_object()')
 
@@ -114,7 +119,7 @@ class CLOBParser:
                     # to following the light
                     # We have a new parent
                     parent_key = key
-                    self.get_dictionary_object(next_object, key, parent_key, search_parent, search_keyword)
+                    self.get_dictionary_object(next_object, key, parent_key, search_parent, search_key)
                     parent_key = previous_key
 
                 elif isinstance(next_object, list):
@@ -126,7 +131,7 @@ class CLOBParser:
                     logging.debug("Determine the object type")
 
                     for item_object in next_object:
-                        self.get_dictionary_object(item_object, key, parent_key, search_parent, search_keyword)
+                        self.get_dictionary_object(item_object, key, parent_key, search_parent, search_key)
 
                     parent_key = previous_key
 
@@ -142,12 +147,12 @@ class CLOBParser:
                     logging.debug("parent_key value: %s", parent_key)
                     logging.debug("search_parent value: %s", search_parent)
                     logging.debug("active_key value: %s", active_key)
-                    logging.debug("search_keyword value: %s", search_keyword)
+                    logging.debug("search_keyword value: %s", search_key)
 
                     if parent_key == search_parent:
-                        if search_keyword:
+                        if search_key:
                             # logging.debug("Parent keys match")
-                            if active_key == search_keyword:
+                            if active_key == search_key:
                                 # We have a key match. We will create and set the
                                 # result list
                                 data_object = module_data_object.DataObject(parent_key, key, next_object)

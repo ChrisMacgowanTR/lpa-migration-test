@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="747b0336-16ca-471a-931c-7f75d46883b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/lpa-migration-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lpa-migration-test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clob_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/clob_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_object.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_object.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/idmap_utility.log" beforeDir="false" afterPath="$PROJECT_DIR$/idmap_utility.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_clob_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_clob_parser.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +43,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.pytest in tests">
+  <component name="RunManager" selected="Python.app">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="lpa-migration-test" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -65,21 +65,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_clob_parser.test_arbitrator_profileUuid_222_case" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="lpa-migration-test" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_clob_parser.test_arbitrator_profileUuid_222_case&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="pytest for test_clob_parser.test_arbitrator_profileUuid_case" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="lpa-migration-test" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -95,7 +80,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in tests" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_clob_parser.test_arbitrator_statusType_case" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="lpa-migration-test" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -106,14 +91,61 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;test_clob_parser.test_arbitrator_statusType_case&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_clob_parser.test_education_case" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="lpa-migration-test" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_clob_parser.test_education_case&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_clob_parser.test_phone_case" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="lpa-migration-test" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_clob_parser.test_phone_case&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_clob_parser.test_phone_id_case" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="lpa-migration-test" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_clob_parser.test_phone_id_case&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest in tests" />
-        <item itemvalue="Python tests.pytest for test_clob_parser.test_arbitrator_profileUuid_222_case" />
+        <item itemvalue="Python tests.pytest for test_clob_parser.test_education_case" />
+        <item itemvalue="Python tests.pytest for test_clob_parser.test_phone_id_case" />
+        <item itemvalue="Python tests.pytest for test_clob_parser.test_phone_case" />
+        <item itemvalue="Python tests.pytest for test_clob_parser.test_arbitrator_statusType_case" />
         <item itemvalue="Python tests.pytest for test_clob_parser.test_arbitrator_profileUuid_case" />
       </list>
     </recent_temporary>
