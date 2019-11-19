@@ -1,5 +1,5 @@
 #
-# LPA Migration Test
+# LPA-ACORN Migration Test Tools
 # CLOB Parser Utility
 # Unit Tests (using pytest)
 # Chris Macgowan
@@ -9,6 +9,10 @@
 # The unit tests implemented below will test the CLOB Parser's ability to
 # parse the CLOB object. We will test different use cases. The CLOB test
 # data is built in the
+#
+# Note: These tests run successfully, but when you run the entire suite
+# then they fail with the result_list seems to be accumulating.
+#
 
 import logging
 import json
@@ -69,11 +73,16 @@ def test_arbitrator_profileUuid_case():
     # Execute the parse operation
     result_list = clob_parser.parse(clob_object, search_parent, search_key)
 
+    print('*********************************************')
+    print('Inside: test_arbitrator_profileUuid_case() - 1')
+    print('result_list length: ', len(result_list))
+
     result = result_list[0]
     assert len(result_list) == 1
     assert result.get_parent() == 'arbitrator'
     assert result.get_key() == 'profileUuid'
     assert result.get_value() == 'Iaac53e00bd9a11de9b8c850332338889'
+
 
 # method: test_arbitrator_statusType_case()
 # brief: This unit test will test the CLOB Parser and access to a single object
@@ -93,6 +102,11 @@ def test_arbitrator_statusType_case():
 
     # Execute the parse operation
     result_list = clob_parser.parse(clob_object, search_parent, search_key)
+
+    print('*********************************************')
+    print('Inside: test_arbitrator_profileUuid_case() - 1')
+    print('result_list length: ', len(result_list))
+
 
     # Validation
     result = result_list[0]
@@ -120,6 +134,10 @@ def test_phone_case():
 
     # Execute the parse operation
     result_list = clob_parser.parse(clob_object, search_parent, search_key)
+
+    print('*********************************************')
+    print('Inside: test_arbitrator_profileUuid_case() - 3')
+    print('result_list length: ', len(result_list))
 
     # Validation
     result = result_list[0]
@@ -158,12 +176,17 @@ def test_phone_id_case():
     # Execute the parse operation
     result_list = clob_parser.parse(clob_object, search_parent, search_key)
 
+    print('*********************************************')
+    print('Inside: test_arbitrator_profileUuid_case() - 1')
+    print('result_list length: ', len(result_list))
+
     # Validation
     result = result_list[0]
     assert len(result_list) == 1
     assert result.get_parent() == 'phone'
     assert result.get_key() == 'id'
     assert result.get_value() == '1'
+
 
 # method: test_education_case()
 # brief: This unit test will test the CLOB Parser and access to a single object
@@ -184,6 +207,10 @@ def test_education_case():
 
     # Execute the parse operation
     result_list = clob_parser.parse(clob_object, search_parent, search_key)
+
+    print('*********************************************')
+    print('Inside: test_arbitrator_profileUuid_case() - 9')
+    print('result_list length: ', len(result_list))
 
     # Validation
     # Collection
