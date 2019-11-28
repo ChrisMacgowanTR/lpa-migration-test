@@ -20,7 +20,6 @@ import json
 import clob_parser as module_clob_parser
 from typing import OrderedDict
 
-
 # method: create_clob_data_object()
 # brief: This method is called from the unit test method to setup the CLOB data
 # structure.

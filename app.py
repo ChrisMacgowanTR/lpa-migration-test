@@ -19,6 +19,8 @@ import traceback
 # import psycopg2
 
 import parse_dictionary as module_parse_dictionary
+import validation_object_fun as module_validation_object_fun
+
 #import idmap_analysis_wca_guid as module_idmap_analysis_wca_guid
 from my_dictionary import my_dictionary
 
@@ -51,7 +53,12 @@ dict_obj.add('key-1', 'Value-A-One')
 dict_obj.add('key-2', 'Value-A-Two')
 print(dict_obj)
 
-parse_dictionary.run5()
+# Not using this at the moment
+parse_dictionary.run6()
+
+# Play with the validation object design
+# validation_object_fun = module_validation_object_fun.ValidationObjectFun()
+# validation_object_fun.run()
 
 logging.info('The end if near!')
 logging.info('LPA Migration Test')

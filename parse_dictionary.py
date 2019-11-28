@@ -352,6 +352,131 @@ class ParseDictionary:
 
 
 
+    # method: run6()
+    # brief: Test the iteration of the dataset
+    # Parser Needs to Work Better !
+    # We need to support getting this data structure
+    # parser 4 levels deep into the mine of lobe
+    # <arbitrator>
+    #   <alternate>
+    #     <addresses>
+    #       <address>
+    #         <line1>
+    #         <line2>
+    #         <city>
+    #         <state>
+    #
+    # I was just looking at the clob parser. We have decided to pass in a array of stuff to
+    # help with the parsing. You can see below:
+    # The collection:
+    # parent: --> arbitrator
+    # child: --> alternate
+    # subChild: --> addresses
+    # subSubChild: --> address
+    #
+    # param: row - The row we are going to validate
+    # param: age - the age of the house you want
+    def run6(self):
+        logging.debug('------------------------------------------------------------')
+        logging.debug('Inside: ParseDictionary::run6()')
+        logging.debug("Loading the data file")
+
+
+
+        # Phone Data
+        phone01 = OrderedDict([('id', '1'), ('phoneNumber', '(605) 336-2880'), ('isInherited', 'Y')])
+        phones = OrderedDict([('phone', phone01)])
+
+        # Email Data
+        email01 = OrderedDict([('id', '1'), ('address', 'lawyers@dehs.com'), ('isInherited', 'Y')])
+        emails = OrderedDict([('email', email01)])
+
+        # Alternate (phones)
+        # Alternate Phone Data
+        alt_phone01 = OrderedDict([('id', '99'), ('phoneNumber', '(999) 888-2222'), ('isInherited', 'Y')])
+        alt_phones = OrderedDict([('phone', alt_phone01)])
+
+        # Alternate Container
+        alternate = OrderedDict([('phones', alt_phones)])
+
+        # Education data
+        education01 = OrderedDict([('type', 'LE'), ('schoolName', 'Nicholaus Copernicus'), ('graduationDate', '1952')])
+        education02 = OrderedDict([('type', 'LW'), ('schoolName', 'Happy LAw School'), ('graduationDate', '1991')])
+        education03 = OrderedDict([('type', 'LQ'), ('schoolName', 'Law School Number 1'), ('graduationDate', '1911')])
+        educations = OrderedDict([('education', [education01, education02, education03   ]   )])
+
+        allOracle88 = OrderedDict([('arbitrator', OrderedDict([('profileUuid', 'Iaac53e00bd9a11de9b8c850332338889'),
+                                                               ('phones', phones),
+                                                               ('alternate', alternate),
+                                                               ('emails', emails),
+                                                               ('educations', educations),
+                                                               ('statusType', 'A') ])  )])
+
+        print(json.dumps(allOracle88, indent=2))
+
+        # Note - we might want to use recussion to iterationt his stuff
+        # We are fun playing here
+
+        logging.debug("Start parsing ... ")
+
+        clob_parser = module_clob_parser.CLOBParser()
+
+        # search_parent - is required. When found it will return all the children
+        # search_keyword - will return a specific child
+
+        # Test Case 1.0 - Pass
+        parse_context10 = OrderedDict([('parent', 'arbitrator'),
+                                     ('child', 'profileUuid'),
+                                     ('subChild', ''),
+                                     ('subSubChild', '')])
+
+        # Test Case 1.1 - Pass
+        parse_context11 = OrderedDict([('parent', 'arbitrator'),
+                                     ('child', 'statusType'),
+                                     ('subChild', ''),
+                                     ('subSubChild', '')])
+
+        # Test Case 2.0 - pass
+        parse_context20 = OrderedDict([('parent', 'arbitrator'),
+                                     ('child', 'phones'),
+                                     ('subChild', 'phone'),
+                                     ('subSubChild', '')])
+
+        # Test Case 2.1 - pass
+        parse_context21 = OrderedDict([('parent', 'arbitrator'),
+                                     ('child', 'phones'),
+                                     ('subChild', 'phone'),
+                                     ('subSubChild', 'id')])
+
+        # Test Case 3.0 - pass
+        parse_context = OrderedDict([('parent', 'arbitrator'),
+                                     ('child', 'educations'),
+                                     ('subChild', 'education'),
+                                     ('subSubChild', '')])
+
+        # Test Case 9.0 - pass
+        parse_context90 = OrderedDict([('parent', 'arbitrator'),
+                                     ('child', 'alternate'),
+                                     ('subChild', 'phones'),
+                                     ('subSubChild', 'phone')])
+
+        result_list = clob_parser.parse2(allOracle88, parse_context)
+
+        # We will iterate through the collection
+
+        logging.debug("--------------------------------------------------------------------------------")
+        logging.debug("CLOB Parse Data")
+        logging.debug("Parent - Key:Value")
+
+        for result in result_list:
+            result_message = f"{result.get_parent()} - {result.get_key()}:{result.get_value()}"
+            logging.debug(result_message)
+
+        logging.debug("Done")
+
+
+
+
 
 
 
