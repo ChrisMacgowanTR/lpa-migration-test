@@ -10145,3 +10145,617 @@ index: educations
 index: statusType
 Done
 Done
+LPA Migration Test
+The application is starting
+Starting postgresql-connect
+Set input source
+Inside: ParseDictionary::ParseDictionary()
+------------------------------------------------------------
+Inside: ParseDictionary::run6()
+Loading the data file
+Start parsing ... 
+Inside: CLOBParser::CLOBParser()
+Inside: CLOBParser::parse()
+Start parsing ... 
+index: arbitrator
+Parent keys match - we are happy
+Determine the object type
+Object type: <class 'collections.OrderedDict'>
+Data value: OrderedDict([('profileUuid', 'Iaac53e00bd9a11de9b8c850332338889'), ('phones', OrderedDict([('phone', OrderedDict([('id', '1'), ('phoneNumber', '(605) 336-2880'), ('isInherited', 'Y')]))])), ('alternate', OrderedDict([('phones', OrderedDict([('phone', OrderedDict([('id', '99'), ('phoneNumber', '(999) 888-2222'), ('isInherited', 'Y')]))]))])), ('emails', OrderedDict([('email', OrderedDict([('id', '1'), ('address', 'lawyers@dehs.com'), ('isInherited', 'Y')]))])), ('educations', OrderedDict([('education', [OrderedDict([('type', 'LE'), ('schoolName', 'Nicholaus Copernicus'), ('graduationDate', '1952')]), OrderedDict([('type', 'LW'), ('schoolName', 'Happy LAw School'), ('graduationDate', '1991')]), OrderedDict([('type', 'LQ'), ('schoolName', 'Law School Number 1'), ('graduationDate', '1911')])])])), ('statusType', 'A')])
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: profileUuid
+index: phones
+index: alternate
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: phones
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: phone
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: id
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: 99
+parent_key value: phone
+index: phoneNumber
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: (999) 888-2222
+parent_key value: phone
+index: isInherited
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: Y
+parent_key value: phone
+Done
+Done
+Done
+index: emails
+index: educations
+index: statusType
+Done
+Done
+--------------------------------------------------------------------------------
+CLOB Parse Data
+Parent - Key:Value
+phone - id:99
+phone - phoneNumber:(999) 888-2222
+phone - isInherited:Y
+Done
+The end if near!
+LPA Migration Test
+The application is stopping
+Have a nice day
+LPA Migration Test
+The application is starting
+Starting postgresql-connect
+Set input source
+Inside: ParseDictionary::ParseDictionary()
+------------------------------------------------------------
+Inside: ParseDictionary::run6()
+Loading the data file
+Start parsing ... 
+Inside: CLOBParser::CLOBParser()
+Inside: CLOBParser::parse()
+Start parsing ... 
+index: arbitrator
+Parent keys match - we are happy
+Determine the object type
+Object type: <class 'collections.OrderedDict'>
+Data value: OrderedDict([('profileUuid', 'Iaac53e00bd9a11de9b8c850332338889'), ('phones', OrderedDict([('phone', OrderedDict([('id', '1'), ('phoneNumber', '(605) 336-2880'), ('isInherited', 'Y')]))])), ('alternate', OrderedDict([('phones', OrderedDict([('phone', OrderedDict([('id', '99'), ('phoneNumber', '(999) 888-2222'), ('isInherited', 'Y')]))]))])), ('emails', OrderedDict([('email', OrderedDict([('id', '1'), ('address', 'lawyers@dehs.com'), ('isInherited', 'Y')]))])), ('educations', OrderedDict([('education', [OrderedDict([('type', 'LE'), ('schoolName', 'Nicholaus Copernicus'), ('graduationDate', '1952')]), OrderedDict([('type', 'LW'), ('schoolName', 'Happy LAw School'), ('graduationDate', '1991')]), OrderedDict([('type', 'LQ'), ('schoolName', 'Law School Number 1'), ('graduationDate', '1911')])])])), ('statusType', 'A')])
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: profileUuid
+index: phones
+index: alternate
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: phones
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: phone
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: id
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: 99
+parent_key value: phone
+Error: An unexpected key was found while parsing the clob.
+LPA Migration Test
+The application is starting
+Starting postgresql-connect
+Set input source
+Inside: ParseDictionary::ParseDictionary()
+------------------------------------------------------------
+Inside: ParseDictionary::run6()
+Loading the data file
+Start parsing ... 
+Inside: CLOBParser::CLOBParser()
+Inside: CLOBParser::parse()
+Start parsing ... 
+index: arbitrator
+Parent keys match - we are happy
+Determine the object type
+Object type: <class 'collections.OrderedDict'>
+Data value: OrderedDict([('profileUuid', 'Iaac53e00bd9a11de9b8c850332338889'), ('phones', OrderedDict([('phone', OrderedDict([('id', '1'), ('phoneNumber', '(605) 336-2880'), ('isInherited', 'Y')]))])), ('alternate', OrderedDict([('phones', OrderedDict([('phone', OrderedDict([('id', '99'), ('phoneNumber', '(999) 888-2222'), ('isInherited', 'Y')]))]))])), ('emails', OrderedDict([('email', OrderedDict([('id', '1'), ('address', 'lawyers@dehs.com'), ('isInherited', 'Y')]))])), ('educations', OrderedDict([('education', [OrderedDict([('type', 'LE'), ('schoolName', 'Nicholaus Copernicus'), ('graduationDate', '1952')]), OrderedDict([('type', 'LW'), ('schoolName', 'Happy LAw School'), ('graduationDate', '1991')]), OrderedDict([('type', 'LQ'), ('schoolName', 'Law School Number 1'), ('graduationDate', '1911')])])])), ('statusType', 'A')])
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: profileUuid
+index: phones
+index: alternate
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: phones
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: phone
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: id
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: 99
+parent_key value: phone
+index: phoneNumber
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: (999) 888-2222
+parent_key value: phone
+index: isInherited
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: Y
+parent_key value: phone
+Done
+Done
+Done
+index: emails
+index: educations
+index: statusType
+Done
+Done
+--------------------------------------------------------------------------------
+CLOB Parse Data
+Parent - Key:Value
+phone - id:99
+phone - phoneNumber:(999) 888-2222
+phone - isInherited:Y
+Done
+The end if near!
+LPA Migration Test
+The application is stopping
+Have a nice day
+LPA Migration Test
+The application is starting
+Starting postgresql-connect
+Set input source
+Inside: ParseDictionary::ParseDictionary()
+------------------------------------------------------------
+Inside: ParseDictionary::run6()
+Loading the data file
+Start parsing ... 
+Inside: CLOBParser::CLOBParser()
+Inside: CLOBParser::parse()
+Start parsing ... 
+index: arbitrator
+Parent keys match - we are happy
+Determine the object type
+Object type: <class 'collections.OrderedDict'>
+Data value: OrderedDict([('profileUuid', 'Iaac53e00bd9a11de9b8c850332338889'), ('phones', OrderedDict([('phone', OrderedDict([('id', '1'), ('phoneNumber', '(605) 336-2880'), ('isInherited', 'Y')]))])), ('alternate', OrderedDict([('phones', OrderedDict([('phone', OrderedDict([('id', '99'), ('phoneNumber', '(999) 888-2222'), ('isInherited', 'Y')]))]))])), ('emails', OrderedDict([('email', OrderedDict([('id', '1'), ('address', 'lawyers@dehs.com'), ('isInherited', 'Y')]))])), ('educations', OrderedDict([('education', [OrderedDict([('type', 'LE'), ('schoolName', 'Nicholaus Copernicus'), ('graduationDate', '1952')]), OrderedDict([('type', 'LW'), ('schoolName', 'Happy LAw School'), ('graduationDate', '1991')]), OrderedDict([('type', 'LQ'), ('schoolName', 'Law School Number 1'), ('graduationDate', '1911')])])])), ('statusType', 'A')])
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: profileUuid
+index: phones
+index: alternate
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: phones
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: phone
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: id
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: 99
+parent_key value: phone
+index: phoneNumber
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: (999) 888-2222
+parent_key value: phone
+index: isInherited
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: Y
+parent_key value: phone
+Done
+Done
+Done
+index: emails
+index: educations
+index: statusType
+Done
+Done
+--------------------------------------------------------------------------------
+CLOB Parse Data
+Parent - Key:Value
+phone - id:99
+phone - phoneNumber:(999) 888-2222
+phone - isInherited:Y
+unknown - phone:NULL
+Done
+The end if near!
+LPA Migration Test
+The application is stopping
+Have a nice day
+LPA Migration Test
+The application is starting
+Starting postgresql-connect
+Set input source
+Inside: ParseDictionary::ParseDictionary()
+------------------------------------------------------------
+Inside: ParseDictionary::run6()
+Loading the data file
+Start parsing ... 
+Inside: CLOBParser::CLOBParser()
+Inside: CLOBParser::parse()
+Start parsing ... 
+index: arbitrator
+Parent keys match - we are happy
+Determine the object type
+Object type: <class 'collections.OrderedDict'>
+Data value: OrderedDict([('profileUuid', 'Iaac53e00bd9a11de9b8c850332338889'), ('phones', OrderedDict([('phone', OrderedDict([('id', '1'), ('phoneNumber', '(605) 336-2880'), ('isInherited', 'Y')]))])), ('alternate', OrderedDict([('phones', OrderedDict([('phone', OrderedDict([('id', '99'), ('phoneNumber', '(999) 888-2222'), ('isInherited', 'Y')]))]))])), ('emails', OrderedDict([('email', OrderedDict([('id', '1'), ('address', 'lawyers@dehs.com'), ('isInherited', 'Y')]))])), ('educations', OrderedDict([('education', [OrderedDict([('type', 'LE'), ('schoolName', 'Nicholaus Copernicus'), ('graduationDate', '1952')]), OrderedDict([('type', 'LW'), ('schoolName', 'Happy LAw School'), ('graduationDate', '1991')]), OrderedDict([('type', 'LQ'), ('schoolName', 'Law School Number 1'), ('graduationDate', '1911')])])])), ('statusType', 'A')])
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: profileUuid
+index: phones
+index: alternate
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: phones
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: phone
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: id
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: 99
+parent_key value: phone
+index: phoneNumber
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: (999) 888-2222
+parent_key value: phone
+index: isInherited
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: Y
+parent_key value: phone
+Done
+Done
+Done
+index: emails
+index: educations
+index: statusType
+Done
+Done
+--------------------------------------------------------------------------------
+CLOB Parse Data
+Parent - Key:Value
+phone - id:99
+phone - phoneNumber:(999) 888-2222
+phone - isInherited:Y
+unknown - phone:NULL
+Done
+The end if near!
+LPA Migration Test
+The application is stopping
+Have a nice day
+LPA Migration Test
+The application is starting
+Starting postgresql-connect
+Set input source
+Inside: ParseDictionary::ParseDictionary()
+------------------------------------------------------------
+Inside: ParseDictionary::run6()
+Loading the data file
+Start parsing ... 
+Inside: CLOBParser::CLOBParser()
+Inside: CLOBParser::parse()
+Start parsing ... 
+index: arbitrator
+Parent keys match - we are happy
+Determine the object type
+Object type: <class 'collections.OrderedDict'>
+Data value: OrderedDict([('profileUuid', 'Iaac53e00bd9a11de9b8c850332338889'), ('phones', OrderedDict([('phone', OrderedDict([('id', '1'), ('phoneNumber', '(605) 336-2880'), ('isInherited', 'Y')]))])), ('alternate', OrderedDict([('phones', OrderedDict([('phone', OrderedDict([('id', '99'), ('phoneNumber', '(999) 888-2222'), ('isInherited', 'Y')]))]))])), ('emails', OrderedDict([('email', OrderedDict([('id', '1'), ('address', 'lawyers@dehs.com'), ('isInherited', 'Y')]))])), ('educations', OrderedDict([('education', [OrderedDict([('type', 'LE'), ('schoolName', 'Nicholaus Copernicus'), ('graduationDate', '1952')]), OrderedDict([('type', 'LW'), ('schoolName', 'Happy LAw School'), ('graduationDate', '1991')]), OrderedDict([('type', 'LQ'), ('schoolName', 'Law School Number 1'), ('graduationDate', '1911')])])])), ('statusType', 'A')])
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: profileUuid
+index: phones
+index: alternate
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: phones
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: phone
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: id
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: 99
+parent_key value: phone
+index: phoneNumber
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: (999) 888-2222
+parent_key value: phone
+index: isInherited
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: Y
+parent_key value: phone
+Done
+Done
+Done
+index: emails
+index: educations
+index: statusType
+Done
+Done
+--------------------------------------------------------------------------------
+CLOB Parse Data
+Parent - Key:Value
+phone - id:99
+phone - phoneNumber:(999) 888-2222
+phone - isInherited:Y
+arbitrator - phone:NULL
+Done
+The end if near!
+LPA Migration Test
+The application is stopping
+Have a nice day
+LPA Migration Test
+The application is starting
+Starting postgresql-connect
+Set input source
+Inside: ParseDictionary::ParseDictionary()
+------------------------------------------------------------
+Inside: ParseDictionary::run6()
+Loading the data file
+Start parsing ... 
+Inside: CLOBParser::CLOBParser()
+Inside: CLOBParser::parse()
+Start parsing ... 
+index: arbitrator
+Parent keys match - we are happy
+Determine the object type
+Object type: <class 'collections.OrderedDict'>
+Data value: OrderedDict([('profileUuid', 'Iaac53e00bd9a11de9b8c850332338889'), ('phones', OrderedDict([('phone', OrderedDict([('id', '1'), ('phoneNumber', '(605) 336-2880'), ('isInherited', 'Y')]))])), ('alternate', OrderedDict([('phones', OrderedDict([('phone', OrderedDict([('id', '99'), ('phoneNumber', '(999) 888-2222'), ('isInherited', 'Y')]))]))])), ('emails', OrderedDict([('email', OrderedDict([('id', '1'), ('address', 'lawyers@dehs.com'), ('isInherited', 'Y')]))])), ('educations', OrderedDict([('education', [OrderedDict([('type', 'LE'), ('schoolName', 'Nicholaus Copernicus'), ('graduationDate', '1952')]), OrderedDict([('type', 'LW'), ('schoolName', 'Happy LAw School'), ('graduationDate', '1991')]), OrderedDict([('type', 'LQ'), ('schoolName', 'Law School Number 1'), ('graduationDate', '1911')])])])), ('statusType', 'A')])
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: profileUuid
+index: phones
+index: alternate
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: phones
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: phone
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: id
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: 99
+parent_key value: phone
+index: phoneNumber
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: (999) 888-2222
+parent_key value: phone
+index: isInherited
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: Y
+parent_key value: phone
+Done
+Done
+Done
+index: emails
+index: educations
+index: statusType
+Done
+Done
+--------------------------------------------------------------------------------
+CLOB Parse Data
+Parent - Key:Value
+phone - id:99
+phone - phoneNumber:(999) 888-2222
+phone - isInherited:Y
+unknown - phone:NULL
+Done
+The end if near!
+LPA Migration Test
+The application is stopping
+Have a nice day
+LPA Migration Test
+The application is starting
+Starting postgresql-connect
+Set input source
+Inside: ParseDictionary::ParseDictionary()
+------------------------------------------------------------
+Inside: ParseDictionary::run6()
+Loading the data file
+Start parsing ... 
+Inside: CLOBParser::CLOBParser()
+Inside: CLOBParser::parse()
+Start parsing ... 
+index: arbitrator
+Parent keys match - we are happy
+Determine the object type
+Object type: <class 'collections.OrderedDict'>
+Data value: OrderedDict([('profileUuid', 'Iaac53e00bd9a11de9b8c850332338889'), ('phones', OrderedDict([('phone', OrderedDict([('id', '1'), ('phoneNumber', '(605) 336-2880'), ('isInherited', 'Y')]))])), ('alternate', OrderedDict([('phones', OrderedDict([('phone', OrderedDict([('id', '99'), ('phoneNumber', '(999) 888-2222'), ('isInherited', 'Y')]))]))])), ('emails', OrderedDict([('email', OrderedDict([('id', '1'), ('address', 'lawyers@dehs.com'), ('isInherited', 'Y')]))])), ('educations', OrderedDict([('education', [OrderedDict([('type', 'LE'), ('schoolName', 'Nicholaus Copernicus'), ('graduationDate', '1952')]), OrderedDict([('type', 'LW'), ('schoolName', 'Happy LAw School'), ('graduationDate', '1991')]), OrderedDict([('type', 'LQ'), ('schoolName', 'Law School Number 1'), ('graduationDate', '1911')])])])), ('statusType', 'A')])
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: profileUuid
+index: phones
+index: alternate
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: phones
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: phone
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: id
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: 99
+parent_key value: phone
+Error: An unexpected key was found while parsing the clob.
+--------------------------------------------------------------------------------
+CLOB Parse Data
+Parent - Key:Value
+LPA Migration Test
+The application is starting
+Starting postgresql-connect
+Set input source
+Inside: ParseDictionary::ParseDictionary()
+------------------------------------------------------------
+Inside: ParseDictionary::run6()
+Loading the data file
+Start parsing ... 
+Inside: CLOBParser::CLOBParser()
+Inside: CLOBParser::parse()
+Start parsing ... 
+index: arbitrator
+Parent keys match - we are happy
+Determine the object type
+Object type: <class 'collections.OrderedDict'>
+Data value: OrderedDict([('profileUuid', 'Iaac53e00bd9a11de9b8c850332338889'), ('phones', OrderedDict([('phone', OrderedDict([('id', '1'), ('phoneNumber', '(605) 336-2880'), ('isInherited', 'Y')]))])), ('alternate', OrderedDict([('phones', OrderedDict([('phone', OrderedDict([('id', '99'), ('phoneNumber', '(999) 888-2222'), ('isInherited', 'Y')]))]))])), ('emails', OrderedDict([('email', OrderedDict([('id', '1'), ('address', 'lawyers@dehs.com'), ('isInherited', 'Y')]))])), ('educations', OrderedDict([('education', [OrderedDict([('type', 'LE'), ('schoolName', 'Nicholaus Copernicus'), ('graduationDate', '1952')]), OrderedDict([('type', 'LW'), ('schoolName', 'Happy LAw School'), ('graduationDate', '1991')]), OrderedDict([('type', 'LQ'), ('schoolName', 'Law School Number 1'), ('graduationDate', '1911')])])])), ('statusType', 'A')])
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: profileUuid
+index: phones
+index: alternate
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: phones
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: phone
+Keys depth match - we are happy
+------------------------------------------------------------
+Inside: ParseDictionary::get_dictionary_object()
+Start parsing ... 
+index: id
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: 99
+parent_key value: phone
+index: phoneNumber
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: (999) 888-2222
+parent_key value: phone
+index: isInherited
+Keys depth match - we are happy
+Determine the object type
+Object type: <class 'str'>
+Data value: Y
+parent_key value: phone
+Done
+Done
+Done
+index: emails
+index: educations
+index: statusType
+Done
+Done
+--------------------------------------------------------------------------------
+CLOB Parse Data
+Parent - Key:Value
+phone - id:99
+phone - phoneNumber:(999) 888-2222
+phone - isInherited:Y
+unknown - phone:NULL
+Done
+The end if near!
+LPA Migration Test
+The application is stopping
+Have a nice day

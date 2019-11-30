@@ -273,6 +273,20 @@ class CLOBParser:
             else:
                 logging.debug("Object type: %s", type(value))
 
+        # We are done parsing the clob. We will now take a look at the expected_fields
+        # dictionary to see if we missed any of the expected fields. All the values
+        # should be set to True. Values that are left to False will be set with a
+        # NULL and then added to the resultList.
+
+        for key in expected_fields:
+            # Get the value associated with the key
+            expected_field_value = expected_fields[key]
+            if expected_field_value == False:
+                # We have a key match. We will create and set the
+                # result list
+                data_object = module_data_object.DataObject('unknown', key, 'NULL')
+                self.resultList.append(data_object)
+
         logging.debug("Done")
         return self.resultList
 
@@ -382,6 +396,20 @@ class CLOBParser:
                         logging.debug("Object type: %s", type(next_object))
                         logging.debug("Data value: %s", next_object)
                         logging.debug("parent_key value: %s", parent_key)
+
+                        # First we will validate that the key exists in the collection of
+                        # expected fields. If it is NOT then we will throw an exception.
+                        # In this case we have parsed a unexpected case.
+
+                        expected_key_flag = False
+
+                        for expected_key in expected_fields:
+                            if expected_key == key:
+                                expected_key_flag = True
+                                break
+
+                        if expected_key_flag == False:
+                            raise ValueError('Error: An unexpected key was found while parsing the clob.')
 
                         # Set the expected_fields dictionary to true if field is found
                         # during the parse process.

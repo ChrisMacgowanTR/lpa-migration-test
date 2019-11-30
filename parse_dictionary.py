@@ -468,7 +468,12 @@ class ParseDictionary:
                                      ('IS_INHERITED', 'isInherited'),
                                      ('subSubChild', 'phone')])
 
-        result_list = clob_parser.parse2(allOracle88, parse_context, parse_fields)
+        try:
+            result_list = clob_parser.parse2(allOracle88, parse_context, parse_fields)
+        except ValueError as error:
+            logging.error(error)
+
+
 
         # We will iterate through the collection
 
