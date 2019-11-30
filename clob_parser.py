@@ -189,12 +189,26 @@ class CLOBParser:
     # return: List of objects
     def parse2(self,
               clob,
-              parse_context):
+              parse_context,
+              parse_fields):
 
         logging.debug('Inside: CLOBParser::parse()')
 
         active_key = ''
         parse_depth = 0;
+
+        # We will take the parse_fields input parameter that will be used for the
+        # field validation. We will use the value of the dictionary to build the
+        # dictionary that will be used to track the fields that have been
+        # parsed. If the field was expected but not found during the parse process
+        # we will set the field in the results to NULL to indicate this condition.
+
+        expected_fields = {}
+
+        for key in parse_fields:
+            # Get the value associated with the key
+            target_field_name = parse_fields[key]
+            expected_fields[target_field_name] = False
 
         # Note - we might want to use recussion to iterationt his stuff
         # We are fun playing here
@@ -232,6 +246,8 @@ class CLOBParser:
                 parse_depth_end += 1
 
 
+
+
             parent_key = key
 
             value = clob[key]
@@ -248,7 +264,12 @@ class CLOBParser:
                 # The object is a collection we will continuie
                 # to iterate
 
-                self.get_dictionary_object2(value, parse_context, parent_key, parse_depth, parse_depth_end)
+                self.get_dictionary_object2(value,
+                                            parse_context,
+                                            expected_fields,
+                                            parent_key,
+                                            parse_depth,
+                                            parse_depth_end)
             else:
                 logging.debug("Object type: %s", type(value))
 
@@ -265,7 +286,13 @@ class CLOBParser:
     # param: parent_key - Used to manage parent during recursion
     # param: search_parent - Parent of object to return
     # param: search_key - object key to parse. Empty will all objects
-    def get_dictionary_object2(self, object, parse_context, parent_key, parse_depth, parse_depth_end):
+    def get_dictionary_object2(self,
+                               object,
+                               parse_context,
+                               expected_fields,
+                               parent_key,
+                               parse_depth,
+                               parse_depth_end):
         logging.debug('------------------------------------------------------------')
         logging.debug('Inside: ParseDictionary::get_dictionary_object()')
 
@@ -317,7 +344,12 @@ class CLOBParser:
                         # We have a new parent
                         parent_key = key
                         # parse_depth += 1
-                        self.get_dictionary_object2(next_object, parse_context, parent_key, parse_depth, parse_depth_end)
+                        self.get_dictionary_object2(next_object,
+                                                    parse_context,
+                                                    expected_fields,
+                                                    parent_key,
+                                                    parse_depth,
+                                                    parse_depth_end)
                         parent_key = previous_key
                         parse_depth -= 1
 
@@ -331,7 +363,12 @@ class CLOBParser:
                         logging.debug("Determine the object type")
 
                         for item_object in next_object:
-                            self.get_dictionary_object2(item_object, parse_context, parent_key, parse_depth, parse_depth_end)
+                            self.get_dictionary_object2(item_object,
+                                                        parse_context,
+                                                        expected_fields,
+                                                        parent_key,
+                                                        parse_depth,
+                                                        parse_depth_end)
 
                         parent_key = previous_key
                         parse_depth -= 1
@@ -345,6 +382,10 @@ class CLOBParser:
                         logging.debug("Object type: %s", type(next_object))
                         logging.debug("Data value: %s", next_object)
                         logging.debug("parent_key value: %s", parent_key)
+
+                        # Set the expected_fields dictionary to true if field is found
+                        # during the parse process.
+                        expected_fields[key] = True
 
                         # We have a key match. We will create and set the
                         # result list

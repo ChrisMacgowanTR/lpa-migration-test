@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="747b0336-16ca-471a-931c-7f75d46883b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/validation_object.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validation_object_fun.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clob_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/clob_parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/idmap_utility.log" beforeDir="false" afterPath="$PROJECT_DIR$/idmap_utility.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parse_dictionary.py" beforeDir="false" afterPath="$PROJECT_DIR$/parse_dictionary.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_clob_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_clob_parser.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -209,13 +205,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/parse_dictionary.py</url>
-          <line>462</line>
+          <line>470</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/parse_dictionary.py</url>
-          <line>466</line>
+          <line>474</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/clob_parser.py</url>
+          <line>215</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/clob_parser.py</url>
+          <line>391</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

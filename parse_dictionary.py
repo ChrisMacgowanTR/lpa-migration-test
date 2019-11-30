@@ -449,18 +449,26 @@ class ParseDictionary:
                                      ('subSubChild', 'id')])
 
         # Test Case 3.0 - pass
-        parse_context = OrderedDict([('parent', 'arbitrator'),
+        parse_context30 = OrderedDict([('parent', 'arbitrator'),
                                      ('child', 'educations'),
                                      ('subChild', 'education'),
                                      ('subSubChild', '')])
 
         # Test Case 9.0 - pass
-        parse_context90 = OrderedDict([('parent', 'arbitrator'),
+        parse_context = OrderedDict([('parent', 'arbitrator'),
                                      ('child', 'alternate'),
                                      ('subChild', 'phones'),
                                      ('subSubChild', 'phone')])
 
-        result_list = clob_parser.parse2(allOracle88, parse_context)
+        # We are adding this parse_fields parameter
+        # You can read more about this in the clob parser
+
+        parse_fields = OrderedDict([('ID', 'id'),
+                                     ('PHONE_NUMBER', 'phoneNumber'),
+                                     ('IS_INHERITED', 'isInherited'),
+                                     ('subSubChild', 'phone')])
+
+        result_list = clob_parser.parse2(allOracle88, parse_context, parse_fields)
 
         # We will iterate through the collection
 
